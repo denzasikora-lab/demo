@@ -76,20 +76,19 @@ const certificates = [
   ['claude-101', 'PDF', 'Claude 101', 'Anthropic Academy', 'Clouade_101.pdf', 'https://verify.skilljar.com/c/578echzjdw5b'],
   ['claude-fluency', 'PDF', 'Claude AI Fluency', 'Anthropic Academy', 'Clouade_AI_Fluency.pdf', 'https://verify.skilljar.com/c/42a2c8rad7ah'],
   ['claude-code', 'PDF', 'Claude Code in Action', 'Anthropic Academy', 'Cloude_Code_In_Action.pdf', 'https://verify.skilljar.com/c/4u54rs82dokd'],
-  ['ml-specialization', 'PDF', 'Machine Learning Specialization', 'Stanford Online · Coursera', 'Coursera_Stanford_A_Machine_Learning_COURSE.pdf', 'https://coursera.org/verify/specialization/NRNBSTTHBHTX'],
-  ['advanced-algorithms', 'PDF', 'Advanced Learning Algorithms', 'Stanford Online · Coursera', 'Coursera_Stanford_Advanced_Learning_Algorithms.pdf', 'https://coursera.org/share/242e91b6dbe682074095de2a35ae6014'],
-  ['reinforcement-learning', 'PDF', 'Reinforcement Learning', 'Stanford Online · Coursera', 'Coursera_Stanford_Reinforcement_Learning.pdf', 'https://coursera.org/share/2643adfc072f53b5cb6c79f3332e009d'],
-  ['supervised-learning', 'PDF', 'Supervised Machine Learning', 'Stanford Online · Coursera', 'Coursera_Stanford_Supervised_Machine_Learning.pdf', 'https://coursera.org/share/0d369ad646eff02cbcc59c3469bd0060'],
+  ['ml-specialization', 'PDF', 'Machine Learning Specialization', 'Stanford Online · Course', 'Coursera_Stanford_A_Machine_Learning_COURSE.pdf', 'https://coursera.org/verify/specialization/NRNBSTTHBHTX', 'ml_course_text'],
+  ['advanced-algorithms', 'PDF', 'Advanced Learning Algorithms', 'Stanford Online · Course certificate', 'Coursera_Stanford_Advanced_Learning_Algorithms.pdf', 'https://coursera.org/share/242e91b6dbe682074095de2a35ae6014', 'ml_certificate_text'],
+  ['reinforcement-learning', 'PDF', 'Reinforcement Learning', 'Stanford Online · Course certificate', 'Coursera_Stanford_Reinforcement_Learning.pdf', 'https://coursera.org/share/2643adfc072f53b5cb6c79f3332e009d', 'ml_certificate_text'],
+  ['supervised-learning', 'PDF', 'Supervised Machine Learning', 'Stanford Online · Course certificate', 'Coursera_Stanford_Supervised_Machine_Learning.pdf', 'https://coursera.org/share/0d369ad646eff02cbcc59c3469bd0060', 'ml_certificate_text'],
   ['databricks', 'PDF', 'Databricks', 'Databricks Academy', 'Databricks_Generic_2206_3_1612960_1781711679.pdf', 'https://drive.google.com/file/d/1SDWbVwS-k0hSsUBzk3mZDEt-YUcOODa/view?usp=share_link'],
   ['digital-competences', 'PDF', 'Digital Competences Report', 'Professional development', 'Digital_competences_report.pdf'],
   ['google-ai', 'PNG', 'Introduction to AI', 'Google · Coursera', 'Google_ai.png', 'https://coursera.org/verify/specialization/Q3T18GZDQQPY'],
-  ['ibm-workflows', 'PDF', 'Agentic AI and Agentic Workflows', 'IBM · Coursera', 'IBM_Agentic_AI_And_Agentic_Workflows_COURSE.pdf', 'https://coursera.org/verify/specialization/I0DR1TLA8G9M'],
-  ['ibm-langchain', 'PDF', 'Agentic AI: LangChain and LangGraph', 'IBM · Coursera', 'IBM_Agentic_AI_LangChain_LangGraph.pdf', 'https://coursera.org/share/289f0e4826d000f8c7ce42c5a40b990f'],
-  ['ibm-frameworks', 'PDF', 'Agentic AI: LangGraph, CrewAI, AutoGen and BeeAI', 'IBM · Coursera', 'IBM_Agentic_AI_LangGraph_CrewAI_AutoGen_BeeAI.pdf', 'https://coursera.org/share/b00cef55f4093bd0db44827bbccd9154'],
-  ['ibm-fundamentals', 'PDF', 'Fundamentals of Building AI Agents', 'IBM · Coursera', 'IBM_Fundamentals_Building_AI_Agents.pdf', 'https://coursera.org/share/8a40f683363d3e1338bafc035777c23d'],
+  ['ibm-workflows', 'PDF', 'Agentic AI and Agentic Workflows', 'IBM · Course', 'IBM_Agentic_AI_And_Agentic_Workflows_COURSE.pdf', 'https://coursera.org/verify/specialization/I0DR1TLA8G9M', 'agentic_course_text'],
+  ['ibm-langchain', 'PDF', 'Agentic AI: LangChain and LangGraph', 'IBM · Course certificate', 'IBM_Agentic_AI_LangChain_LangGraph.pdf', 'https://coursera.org/share/289f0e4826d000f8c7ce42c5a40b990f', 'agentic_certificate_text'],
+  ['ibm-frameworks', 'PDF', 'Agentic AI: LangGraph, CrewAI, AutoGen and BeeAI', 'IBM · Course certificate', 'IBM_Agentic_AI_LangGraph_CrewAI_AutoGen_BeeAI.pdf', 'https://coursera.org/share/b00cef55f4093bd0db44827bbccd9154', 'agentic_certificate_text'],
+  ['ibm-fundamentals', 'PDF', 'Fundamentals of Building AI Agents', 'IBM · Course certificate', 'IBM_Fundamentals_Building_AI_Agents.pdf', 'https://coursera.org/share/8a40f683363d3e1338bafc035777c23d', 'agentic_certificate_text'],
   ['openai-agents', 'PDF', 'Agents and Workflows', 'OpenAI Academy', 'OpenAI_Agents_And_Workflows.pdf', 'https://academy.openai.com/public/certificate/kyebwfhzky'],
-  ['cambridge-key', 'JPEG', 'Cambridge English Entry Level Certificate', 'Cambridge English Assessment', 'КЕТ.jpeg'],
-].map(([id, kind, title, subtitle, filename, verificationUrl]) => ({
+].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
   title,
@@ -97,6 +96,7 @@ const certificates = [
   filename,
   source: `/demo/certifications/${filename}`,
   verificationUrl,
+  textKey,
   preview:
     kind === 'PDF'
       ? `/demo/previews/certifications/${filename.replace(/\.pdf$/, '.png')}`
@@ -141,9 +141,16 @@ function PreviewModal({ document, onClose, t }) {
             <p className="eyebrow">{t('preview')}</p>
             <h2 id="preview-title">{document.title}</h2>
           </div>
-          <Button small rounded onClick={onClose} aria-label={t('close_preview')}>
-            {t('close')}
-          </Button>
+          <div className="preview-actions">
+            {!document.external && (
+              <Button small rounded onClick={() => downloadFile(document)}>
+                {document.kind === 'PDF' ? t('download_pdf') : t('download_image')}
+              </Button>
+            )}
+            <Button small rounded onClick={onClose} aria-label={t('close_preview')}>
+              {t('close')}
+            </Button>
+          </div>
         </div>
         <div className="preview-content">
           {isPdf ? (
@@ -169,8 +176,8 @@ function downloadFile(document) {
 function DocumentListItem({ document, onPreview, onCopy, t }) {
   const title = document.titleKey ? t(document.titleKey) : document.title;
   const text = document.textKey ? t(document.textKey) : t('certificate_file');
-  const actionText = document.external ? t('open') : document.kind === 'PDF' ? t('download_pdf') : t('download_image');
   const copyUrl = document.verificationUrl || new URL(document.source, window.location.origin).href;
+  const copyUrlLabel = copyUrl.length > 58 ? `${copyUrl.slice(0, 56)}..` : copyUrl;
 
   const open = () => {
     if (document.external) {
@@ -180,63 +187,67 @@ function DocumentListItem({ document, onPreview, onCopy, t }) {
     onPreview({ ...document, title });
   };
 
-  const activate = () => {
-    if (document.external) {
-      open();
-      return;
-    }
-    downloadFile(document);
-  };
-
   return (
     <ListItem
+      link
       dividers
       chevronMaterial={false}
       className="document-list-item cursor-pointer"
-      onClick={activate}
       title={title}
       subtitle={document.subtitle}
       text={text}
       footer={
-        <button
-          type="button"
+        <span
+          role="button"
+          tabIndex={0}
           className="document-source"
           title={copyUrl}
           onClick={(event) => {
             event.stopPropagation();
+            event.preventDefault();
+            onCopy(copyUrl);
+          }}
+          onKeyDown={(event) => {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            event.stopPropagation();
             onCopy(copyUrl);
           }}
         >
-          {copyUrl}
-        </button>
+          {copyUrlLabel}
+        </span>
       }
       media={
-        <button
+        <span
+          role="button"
+          tabIndex={0}
           className="document-thumbnail"
-          type="button"
           aria-label={`${t('preview')}: ${title}`}
           onClick={(event) => {
+            event.stopPropagation();
+            event.preventDefault();
+            open();
+          }}
+          onKeyDown={(event) => {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
             event.stopPropagation();
             open();
           }}
         >
           <img src={document.preview} alt="" />
           <span>{document.kind}</span>
-        </button>
+        </span>
       }
-      after={
-        <Button
-          small
-          rounded
-          className="download-button"
-          onClick={(event) => {
-            event.stopPropagation();
-            activate();
-          }}
-        >
-          {actionText}
-        </Button>
-      }
+      linkProps={{
+        href: document.external ? document.source : '#preview',
+        target: document.external ? '_blank' : undefined,
+        rel: document.external ? 'noreferrer' : undefined,
+        onClick: (event) => {
+          event.preventDefault();
+          open();
+        },
+      }}
     />
   );
 }
@@ -337,11 +348,13 @@ function AppContent() {
 
         <BlockTitle className="documents-title">{t('materials')}</BlockTitle>
         <Block className="documents-block">
-          <List strongIos outlineIos dividers className="documents-list">
-            {documents.map((document) => (
-              <DocumentListItem key={document.id} document={document} onPreview={setSelectedDocument} onCopy={copyToClipboard} t={t} />
-            ))}
-          </List>
+          <Glass className="documents-glass rounded-3xl p-2">
+            <List strong inset dividers className="documents-list">
+              {documents.map((document) => (
+                <DocumentListItem key={document.id} document={document} onPreview={setSelectedDocument} onCopy={copyToClipboard} t={t} />
+              ))}
+            </List>
+          </Glass>
         </Block>
 
         <Block className="notice-block">
