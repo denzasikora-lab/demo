@@ -10,10 +10,10 @@ import {
   ListInput,
   ListItem,
   Navbar,
+  Notification,
   Page,
   Segmented,
   SegmentedButton,
-  Toast,
 } from 'konsta/react';
 import { l_ } from './Localization';
 import './styles.css';
@@ -73,29 +73,30 @@ const patentDocuments = [
 const certificates = [
   ['aws', 'PDF', 'AWS Cloud Essentials', 'AWS', 'AWS_Essentials.pdf'],
   ['langchain', 'PDF', 'Build AI Autonomous Agents', 'LangChain & Hugging Face', 'Certificate_Build_AI_Autonomous_Agents_with_LangChain_and_Hugging Face.pdf'],
-  ['claude-101', 'PDF', 'Claude 101', 'Anthropic Academy', 'Clouade_101.pdf'],
-  ['claude-fluency', 'PDF', 'Claude AI Fluency', 'Anthropic Academy', 'Clouade_AI_Fluency.pdf'],
-  ['claude-code', 'PDF', 'Claude Code in Action', 'Anthropic Academy', 'Cloude_Code_In_Action.pdf'],
-  ['ml-specialization', 'PDF', 'Machine Learning Specialization', 'Stanford Online · Coursera', 'Coursera_Stanford_A_Machine_Learning_COURSE.pdf'],
-  ['advanced-algorithms', 'PDF', 'Advanced Learning Algorithms', 'Stanford Online · Coursera', 'Coursera_Stanford_Advanced_Learning_Algorithms.pdf'],
-  ['reinforcement-learning', 'PDF', 'Reinforcement Learning', 'Stanford Online · Coursera', 'Coursera_Stanford_Reinforcement_Learning.pdf'],
-  ['supervised-learning', 'PDF', 'Supervised Machine Learning', 'Stanford Online · Coursera', 'Coursera_Stanford_Supervised_Machine_Learning.pdf'],
-  ['databricks', 'PDF', 'Databricks', 'Databricks Academy', 'Databricks_Generic_2206_3_1612960_1781711679.pdf'],
+  ['claude-101', 'PDF', 'Claude 101', 'Anthropic Academy', 'Clouade_101.pdf', 'https://verify.skilljar.com/c/578echzjdw5b'],
+  ['claude-fluency', 'PDF', 'Claude AI Fluency', 'Anthropic Academy', 'Clouade_AI_Fluency.pdf', 'https://verify.skilljar.com/c/42a2c8rad7ah'],
+  ['claude-code', 'PDF', 'Claude Code in Action', 'Anthropic Academy', 'Cloude_Code_In_Action.pdf', 'https://verify.skilljar.com/c/4u54rs82dokd'],
+  ['ml-specialization', 'PDF', 'Machine Learning Specialization', 'Stanford Online · Coursera', 'Coursera_Stanford_A_Machine_Learning_COURSE.pdf', 'https://coursera.org/verify/specialization/NRNBSTTHBHTX'],
+  ['advanced-algorithms', 'PDF', 'Advanced Learning Algorithms', 'Stanford Online · Coursera', 'Coursera_Stanford_Advanced_Learning_Algorithms.pdf', 'https://coursera.org/share/242e91b6dbe682074095de2a35ae6014'],
+  ['reinforcement-learning', 'PDF', 'Reinforcement Learning', 'Stanford Online · Coursera', 'Coursera_Stanford_Reinforcement_Learning.pdf', 'https://coursera.org/share/2643adfc072f53b5cb6c79f3332e009d'],
+  ['supervised-learning', 'PDF', 'Supervised Machine Learning', 'Stanford Online · Coursera', 'Coursera_Stanford_Supervised_Machine_Learning.pdf', 'https://coursera.org/share/0d369ad646eff02cbcc59c3469bd0060'],
+  ['databricks', 'PDF', 'Databricks', 'Databricks Academy', 'Databricks_Generic_2206_3_1612960_1781711679.pdf', 'https://drive.google.com/file/d/1SDWbVwS-k0hSsUBzk3mZDEt-YUcOODa/view?usp=share_link'],
   ['digital-competences', 'PDF', 'Digital Competences Report', 'Professional development', 'Digital_competences_report.pdf'],
-  ['google-ai', 'PNG', 'Introduction to AI', 'Google · Coursera', 'Google_ai.png'],
-  ['ibm-workflows', 'PDF', 'Agentic AI and Agentic Workflows', 'IBM · Coursera', 'IBM_Agentic_AI_And_Agentic_Workflows_COURSE.pdf'],
-  ['ibm-langchain', 'PDF', 'Agentic AI: LangChain and LangGraph', 'IBM · Coursera', 'IBM_Agentic_AI_LangChain_LangGraph.pdf'],
-  ['ibm-frameworks', 'PDF', 'Agentic AI: LangGraph, CrewAI, AutoGen and BeeAI', 'IBM · Coursera', 'IBM_Agentic_AI_LangGraph_CrewAI_AutoGen_BeeAI.pdf'],
-  ['ibm-fundamentals', 'PDF', 'Fundamentals of Building AI Agents', 'IBM · Coursera', 'IBM_Fundamentals_Building_AI_Agents.pdf'],
-  ['openai-agents', 'PDF', 'Agents and Workflows', 'OpenAI Academy', 'OpenAI_Agents_And_Workflows.pdf'],
+  ['google-ai', 'PNG', 'Introduction to AI', 'Google · Coursera', 'Google_ai.png', 'https://coursera.org/verify/specialization/Q3T18GZDQQPY'],
+  ['ibm-workflows', 'PDF', 'Agentic AI and Agentic Workflows', 'IBM · Coursera', 'IBM_Agentic_AI_And_Agentic_Workflows_COURSE.pdf', 'https://coursera.org/verify/specialization/I0DR1TLA8G9M'],
+  ['ibm-langchain', 'PDF', 'Agentic AI: LangChain and LangGraph', 'IBM · Coursera', 'IBM_Agentic_AI_LangChain_LangGraph.pdf', 'https://coursera.org/share/289f0e4826d000f8c7ce42c5a40b990f'],
+  ['ibm-frameworks', 'PDF', 'Agentic AI: LangGraph, CrewAI, AutoGen and BeeAI', 'IBM · Coursera', 'IBM_Agentic_AI_LangGraph_CrewAI_AutoGen_BeeAI.pdf', 'https://coursera.org/share/b00cef55f4093bd0db44827bbccd9154'],
+  ['ibm-fundamentals', 'PDF', 'Fundamentals of Building AI Agents', 'IBM · Coursera', 'IBM_Fundamentals_Building_AI_Agents.pdf', 'https://coursera.org/share/8a40f683363d3e1338bafc035777c23d'],
+  ['openai-agents', 'PDF', 'Agents and Workflows', 'OpenAI Academy', 'OpenAI_Agents_And_Workflows.pdf', 'https://academy.openai.com/public/certificate/kyebwfhzky'],
   ['cambridge-key', 'JPEG', 'Cambridge English Entry Level Certificate', 'Cambridge English Assessment', 'КЕТ.jpeg'],
-].map(([id, kind, title, subtitle, filename]) => ({
+].map(([id, kind, title, subtitle, filename, verificationUrl]) => ({
   id,
   kind,
   title,
   subtitle,
   filename,
   source: `/demo/certifications/${filename}`,
+  verificationUrl,
   preview:
     kind === 'PDF'
       ? `/demo/previews/certifications/${filename.replace(/\.pdf$/, '.png')}`
@@ -165,27 +166,50 @@ function downloadFile(document) {
   anchor.remove();
 }
 
-function DocumentListItem({ document, onOpen, t }) {
+function DocumentListItem({ document, onPreview, onCopy, t }) {
   const title = document.titleKey ? t(document.titleKey) : document.title;
   const text = document.textKey ? t(document.textKey) : t('certificate_file');
   const actionText = document.external ? t('open') : document.kind === 'PDF' ? t('download_pdf') : t('download_image');
+  const copyUrl = document.verificationUrl || new URL(document.source, window.location.origin).href;
 
   const open = () => {
     if (document.external) {
       window.open(document.source, '_blank', 'noopener,noreferrer');
       return;
     }
-    onOpen({ ...document, title });
+    onPreview({ ...document, title });
+  };
+
+  const activate = () => {
+    if (document.external) {
+      open();
+      return;
+    }
+    downloadFile(document);
   };
 
   return (
     <ListItem
-      link
       dividers
       chevronMaterial={false}
+      className="document-list-item cursor-pointer"
+      onClick={activate}
       title={title}
       subtitle={document.subtitle}
       text={text}
+      footer={
+        <button
+          type="button"
+          className="document-source"
+          title={copyUrl}
+          onClick={(event) => {
+            event.stopPropagation();
+            onCopy(copyUrl);
+          }}
+        >
+          {copyUrl}
+        </button>
+      }
       media={
         <button
           className="document-thumbnail"
@@ -207,25 +231,12 @@ function DocumentListItem({ document, onOpen, t }) {
           className="download-button"
           onClick={(event) => {
             event.stopPropagation();
-            if (document.external) {
-              open();
-              return;
-            }
-            downloadFile(document);
+            activate();
           }}
         >
           {actionText}
         </Button>
       }
-      linkProps={{
-        href: document.external ? document.source : '#preview',
-        target: document.external ? '_blank' : undefined,
-        rel: document.external ? 'noreferrer' : undefined,
-        onClick: (event) => {
-          event.preventDefault();
-          open();
-        },
-      }}
     />
   );
 }
@@ -233,7 +244,7 @@ function DocumentListItem({ document, onOpen, t }) {
 function AppContent() {
   const [lz, setLz] = useState('en');
   const [selectedDocument, setSelectedDocument] = useState(null);
-  const [toastOpened, setToastOpened] = useState(false);
+  const [notificationOpened, setNotificationOpened] = useState(false);
   const section = window.location.pathname.replace(/\/$/, '').endsWith('/cert') ? 'cert' : 'patent';
   const t = (key) => l_[key]?.[lz] ?? l_[key]?.en ?? key;
   const documents = section === 'cert' ? certificates : patentDocuments;
@@ -249,21 +260,21 @@ function AppContent() {
   }, [lz]);
 
   useEffect(() => {
-    if (!toastOpened) return undefined;
-    const timeout = window.setTimeout(() => setToastOpened(false), 2600);
+    if (!notificationOpened) return undefined;
+    const timeout = window.setTimeout(() => setNotificationOpened(false), 2600);
     return () => window.clearTimeout(timeout);
-  }, [toastOpened]);
+  }, [notificationOpened]);
 
   const shareUrl = useMemo(() => window.location.href, [section]);
   const navigate = (target) => window.location.assign(`${import.meta.env.BASE_URL}${target}/`);
   const handleSetLz = (event) => setLz(event.target.value);
 
-  const copyToClipboard = async () => {
+  const copyToClipboard = async (value = shareUrl) => {
     try {
-      await navigator.clipboard.writeText(shareUrl);
+      await navigator.clipboard.writeText(value);
     } catch {
       const area = window.document.createElement('textarea');
-      area.value = shareUrl;
+      area.value = value;
       area.setAttribute('readonly', '');
       area.style.position = 'fixed';
       area.style.opacity = '0';
@@ -272,7 +283,8 @@ function AppContent() {
       window.document.execCommand('copy');
       area.remove();
     }
-    setToastOpened(true);
+    setNotificationOpened(false);
+    window.setTimeout(() => setNotificationOpened(true), 0);
   };
 
   return (
@@ -327,7 +339,7 @@ function AppContent() {
         <Block className="documents-block">
           <List strongIos outlineIos dividers className="documents-list">
             {documents.map((document) => (
-              <DocumentListItem key={document.id} document={document} onOpen={setSelectedDocument} t={t} />
+              <DocumentListItem key={document.id} document={document} onPreview={setSelectedDocument} onCopy={copyToClipboard} t={t} />
             ))}
           </List>
         </Block>
@@ -336,9 +348,15 @@ function AppContent() {
           <p>{t('notice')}</p>
         </Block>
       </Page>
-      <Toast position="center" opened={toastOpened}>
-        <div className="shrink">{t('link_copied')}</div>
-      </Toast>
+      <Notification
+        opened={notificationOpened}
+        icon={<CopyIcon />}
+        title={t('link_copied')}
+        titleRightText={t('now')}
+        subtitle={pageTitle}
+        text={t('link_copied_description')}
+        onClick={() => setNotificationOpened(false)}
+      />
       <PreviewModal document={selectedDocument} onClose={() => setSelectedDocument(null)} t={t} />
     </App>
   );

@@ -11,6 +11,8 @@ export const l_ = {
   materials: { en: 'Materials', ru: 'Материалы', es: 'Materiales', fr: 'Documents', zh: '材料', ar: 'المواد' },
   copy_link: { en: 'Copy link', ru: 'Скопировать ссылку', es: 'Copiar enlace', fr: 'Copier le lien', zh: '复制链接', ar: 'نسخ الرابط' },
   link_copied: { en: 'Link copied', ru: 'Ссылка скопирована', es: 'Enlace copiado', fr: 'Lien copié', zh: '链接已复制', ar: 'تم نسخ الرابط' },
+  link_copied_description: { en: 'The direct document link is ready to paste.', ru: 'Прямая ссылка на документ готова к вставке.', es: 'El enlace directo al documento está listo para pegar.', fr: 'Le lien direct vers le document est prêt à être collé.', zh: '文档直链已复制，可以粘贴。', ar: 'رابط المستند المباشر جاهز للصق.' },
+  now: { en: 'now', ru: 'сейчас', es: 'ahora', fr: 'maintenant', zh: '现在', ar: 'الآن' },
   preview: { en: 'Preview', ru: 'Предпросмотр', es: 'Vista previa', fr: 'Aperçu', zh: '预览', ar: 'معاينة' },
   close: { en: 'Close', ru: 'Закрыть', es: 'Cerrar', fr: 'Fermer', zh: '关闭', ar: 'إغلاق' },
   close_preview: { en: 'Close preview', ru: 'Закрыть предпросмотр', es: 'Cerrar vista previa', fr: 'Fermer l’aperçu', zh: '关闭预览', ar: 'إغلاق المعاينة' },
