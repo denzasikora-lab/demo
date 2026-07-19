@@ -1,0 +1,12 @@
+diff --git a/node_modules/konsta/shared/classes/ListItemClasses.js b/node_modules/konsta/shared/classes/ListItemClasses.js
+index a5ba2e5..c7f1093 100644
+--- a/node_modules/konsta/shared/classes/ListItemClasses.js
++++ b/node_modules/konsta/shared/classes/ListItemClasses.js
+@@ -8,6 +8,7 @@ export const ListItemClasses = (props, colors, {
+   autoStrongTitle,
+   nested
+ }, baseClassName) => {
++  isMediaItem = Boolean(isMediaItem);
+   const {
+     menuListItem,
+     dividers,

@@ -2,134 +2,54 @@
 @import 'konsta/react/theme.css';
 
 :root {
-  color: #1d2b25;
-  background: #eef3ef;
+  color: #153226;
+  background: #e9f1ec;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 * { box-sizing: border-box; }
-
 body { margin: 0; min-width: 320px; }
-
 button { font: inherit; }
 
 .patent-page {
   min-height: 100vh;
   background:
-    radial-gradient(circle at 80% -10%, rgba(48, 148, 118, 0.18), transparent 28rem),
-    linear-gradient(180deg, #f7faf7 0%, #edf3ef 100%);
+    radial-gradient(circle at 15% -10%, rgba(62, 153, 121, 0.22), transparent 30rem),
+    radial-gradient(circle at 88% 12%, rgba(105, 159, 236, 0.17), transparent 28rem),
+    linear-gradient(180deg, #f8fbf9 0%, #e8f0eb 100%);
 }
 
-.hero {
-  max-width: 840px;
-  padding: 4.5rem 1.25rem 1.75rem;
-  margin: 0 auto;
-}
+.patent-navbar { position: sticky; top: 0; z-index: 15; }
+.nav-left-action { display: inline-flex; align-items: center; justify-content: center; padding: 0.25rem 0.5rem; border: 0; background: transparent; color: #1e6e55; cursor: pointer; }
+.nav-icon { width: 1.2rem; height: 1.2rem; }
+.language-picker { margin: 0; min-width: 3.25rem; background: transparent !important; }
+.language-picker .k-list-input { min-height: 2rem; background: transparent !important; }
+.language-picker .k-list-input-inner { padding: 0 !important; }
+.language-picker select { min-width: 3.25rem; padding-right: 1rem !important; font-size: 1rem !important; }
 
-.eyebrow {
-  margin: 0 0 0.65rem;
-  color: #14745b;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
+.hero { max-width: 840px; padding: 2.4rem 1.25rem 1.1rem; margin: 0 auto; }
+.hero-glass { overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.58); box-shadow: 0 18px 50px rgba(21, 74, 53, 0.1); }
+.eyebrow { margin: 0 0 0.65rem; color: #137458; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+.hero h1 { max-width: 740px; margin: 0; color: #132b20; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.05rem, 6vw, 3.65rem); font-weight: 500; line-height: 1.02; letter-spacing: -0.045em; }
+.hero-description { max-width: 650px; margin: 1.1rem 0 0; color: #536b5f; font-size: 1.03rem; line-height: 1.55; }
+.copy-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 1.2rem; color: #126d53 !important; font-size: 0.86rem; font-weight: 700; }
+.copy-icon { width: 1rem; height: 1rem; }
 
-.hero h1 {
-  max-width: 740px;
-  margin: 0;
-  color: #152b21;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 6vw, 3.65rem);
-  font-weight: 500;
-  line-height: 1.02;
-  letter-spacing: -0.045em;
-}
-
-.hero > p:last-child {
-  max-width: 640px;
-  margin: 1.15rem 0 0;
-  color: #53685d;
-  font-size: 1.05rem;
-  line-height: 1.55;
-}
-
-.documents-title,
-.documents-block,
-.notice-block {
-  max-width: 840px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.documents-title { padding: 0 1.25rem; color: #244738; }
+.segment-block, .documents-title, .documents-block, .notice-block { max-width: 840px; margin-right: auto; margin-left: auto; }
+.segment-block { padding: 0.5rem 1.25rem 0.2rem; }
+.documents-title { padding: 0 1.25rem; color: #244b3a; }
 .documents-block { padding: 0 1rem; }
 .documents-list { overflow: hidden; box-shadow: 0 20px 45px rgba(25, 67, 48, 0.08); }
 
-.document-thumbnail {
-  position: relative;
-  display: block;
-  width: 88px;
-  height: 112px;
-  padding: 0;
-  overflow: hidden;
-  border: 1px solid rgba(28, 72, 54, 0.18);
-  border-radius: 0.8rem;
-  background: #e5ece7;
-  cursor: zoom-in;
-  flex: 0 0 auto;
-}
-
-.document-thumbnail img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.document-thumbnail span {
-  position: absolute;
-  right: 0.35rem;
-  bottom: 0.35rem;
-  padding: 0.18rem 0.32rem;
-  border-radius: 0.32rem;
-  background: rgba(17, 40, 30, 0.8);
-  color: white;
-  font-size: 0.56rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
+.document-thumbnail { position: relative; display: block; width: 88px; height: 112px; padding: 0; overflow: hidden; border: 1px solid rgba(28, 72, 54, 0.18); border-radius: 0.8rem; background: #e5ece7; cursor: zoom-in; flex: 0 0 auto; }
+.document-thumbnail img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.document-thumbnail span { position: absolute; right: 0.35rem; bottom: 0.35rem; padding: 0.18rem 0.32rem; border-radius: 0.32rem; background: rgba(17, 40, 30, 0.8); color: white; font-size: 0.56rem; font-weight: 800; letter-spacing: 0.04em; }
 .download-button { white-space: nowrap; }
 .notice-block { padding: 0.25rem 1.25rem 3rem; color: #597064; font-size: 0.88rem; line-height: 1.5; }
 
-.preview-backdrop {
-  position: fixed;
-  z-index: 30;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
-  background: rgba(8, 24, 17, 0.62);
-  backdrop-filter: blur(8px);
-}
-
-.preview-dialog {
-  display: flex;
-  flex-direction: column;
-  width: min(100%, 1000px);
-  height: min(92vh, 900px);
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 1.15rem;
-  background: #f8fbf8;
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
-}
-
-.preview-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.15rem;
-  border-bottom: 1px solid #d9e3dc;
-}
-
+.preview-backdrop { position: fixed; z-index: 30; inset: 0; display: grid; place-items: center; padding: 1rem; background: rgba(8, 24, 17, 0.62); backdrop-filter: blur(8px); }
+.preview-dialog { display: flex; flex-direction: column; width: min(100%, 1000px); height: min(92vh, 900px); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 1.15rem; background: #f8fbf8; box-shadow: 0 28px 90px rgba(0, 0, 0, 0.35); }
+.preview-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.15rem; border-bottom: 1px solid #d9e3dc; }
 .preview-toolbar .eyebrow { margin-bottom: 0.18rem; font-size: 0.63rem; }
 .preview-toolbar h2 { margin: 0; font-size: 1rem; font-weight: 700; }
 .preview-content { flex: 1; min-height: 0; overflow: auto; background: #dfe8e1; }
@@ -137,7 +57,9 @@ button { font: inherit; }
 .preview-content img { display: block; max-width: 100%; min-height: 100%; margin: auto; object-fit: contain; }
 
 @media (max-width: 640px) {
-  .hero { padding-top: 3.5rem; }
+  .hero { padding-top: 1.75rem; }
   .document-thumbnail { width: 64px; height: 84px; }
   .download-button { font-size: 0.7rem; }
+  .language-picker { min-width: 2.65rem; }
+  .language-picker select { min-width: 2.65rem; }
 }
