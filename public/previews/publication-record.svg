@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420">
+  <rect width="320" height="420" rx="24" fill="#e6f1ea"/>
+  <rect x="35" y="30" width="250" height="360" rx="10" fill="#fbfdfa" stroke="#b7d4c3" stroke-width="3"/>
+  <circle cx="72" cy="75" r="17" fill="#167457"/>
+  <path d="M65 75h14M72 68v14" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+  <text x="102" y="81" fill="#1e624b" font-family="Arial, sans-serif" font-size="16" font-weight="700">RESEARCH</text>
+  <rect x="62" y="125" width="195" height="13" rx="6.5" fill="#1b563f"/>
+  <rect x="62" y="154" width="156" height="9" rx="4.5" fill="#89bba4"/>
+  <rect x="62" y="174" width="178" height="9" rx="4.5" fill="#89bba4"/>
+  <rect x="62" y="214" width="195" height="7" rx="3.5" fill="#d3e4da"/>
+  <rect x="62" y="231" width="174" height="7" rx="3.5" fill="#d3e4da"/>
+  <rect x="62" y="248" width="188" height="7" rx="3.5" fill="#d3e4da"/>
+  <rect x="62" y="265" width="132" height="7" rx="3.5" fill="#d3e4da"/>
+  <text x="62" y="337" fill="#167457" font-family="Arial, sans-serif" font-size="17" font-weight="700">PUBLICATION</text>
+  <text x="62" y="363" fill="#6a8678" font-family="Arial, sans-serif" font-size="13">Academic record</text>
+</svg>

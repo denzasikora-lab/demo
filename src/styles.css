@@ -31,6 +31,7 @@ button { font: inherit; }
 .hero-glass { overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.58); box-shadow: 0 18px 50px rgba(21, 74, 53, 0.1); }
 .eyebrow { margin: 0 0 0.65rem; color: #137458; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
 .hero h1 { max-width: 740px; margin: 0; color: #132b20; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.05rem, 6vw, 3.65rem); font-weight: 500; line-height: 1.02; letter-spacing: -0.045em; }
+.certificate-count { display: inline-block; margin-right: 0.18em; color: #137458; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.36em; font-weight: 800; letter-spacing: 0; vertical-align: top; }
 .hero-description { max-width: 650px; margin: 1.1rem 0 0; color: #536b5f; font-size: 1.03rem; line-height: 1.55; }
 .copy-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 1.2rem; color: #126d53 !important; font-size: 0.86rem; font-weight: 700; }
 .copy-icon { width: 1rem; height: 1rem; }
@@ -54,7 +55,8 @@ button { font: inherit; }
 .preview-backdrop { position: fixed; z-index: 30; inset: 0; display: grid; place-items: center; padding: 1rem; background: rgba(8, 24, 17, 0.62); backdrop-filter: blur(8px); }
 .preview-dialog { display: flex; flex-direction: column; width: min(100%, 1000px); height: min(92vh, 900px); overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 1.15rem; background: #f8fbf8; box-shadow: 0 28px 90px rgba(0, 0, 0, 0.35); }
 .preview-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.15rem; border-bottom: 1px solid #d9e3dc; }
-.preview-actions { display: flex; gap: 0.5rem; }
+.preview-actions { display: flex; flex: 0 0 auto; gap: 0.5rem; }
+.preview-actions .k-button, .preview-download { flex: 0 0 auto; min-height: 2rem; padding-right: 0.8rem; padding-left: 0.8rem; white-space: nowrap !important; }
 .preview-toolbar .eyebrow { margin-bottom: 0.18rem; font-size: 0.63rem; }
 .preview-toolbar h2 { margin: 0; font-size: 1rem; font-weight: 700; }
 .preview-content { flex: 1; min-height: 0; overflow: auto; background: #dfe8e1; }

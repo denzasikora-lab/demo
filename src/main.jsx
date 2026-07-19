@@ -31,9 +31,9 @@ const patentDocuments = [
   {
     id: 'en-pdf',
     kind: 'PDF',
-    titleKey: 'patent_english_title',
-    subtitle: '2620986 C1',
-    textKey: 'patent_english_text',
+    titleKey: 'patent_invention_title',
+    subtitleKey: 'patent_invention_subtitle',
+    textKey: 'patent_invention_text',
     preview: '/demo/previews/patent-en-1.png',
     source: '/demo/patents/Patent_2620986C1_en.pdf',
     filename: 'Patent_2620986C1_en.pdf',
@@ -66,6 +66,26 @@ const patentDocuments = [
     textKey: 'google_patents_text',
     preview: '/demo/previews/google-patents-thumbnail.png',
     source: 'https://patents.google.com/patent/RU2620986C1/en',
+    external: true,
+  },
+  {
+    id: 'hemangiomas-chapter',
+    kind: 'ONLINE',
+    title: 'Method and Model for Estimating the Thickness of Hemangiomas',
+    subtitle: 'Fedosov, Goldstein & Diomidov · 2015',
+    text: 'Chapter in conference proceedings: Physics. Technologies. Innovations, Vol. 1, pp. 196–204. Ural Federal University.',
+    preview: '/demo/previews/publication-record.svg',
+    source: 'https://sciencedata.urfu.ru/portal/en/persons/--(ffbec4cd-b593-4af0-a10c-5965d72e1627).html',
+    external: true,
+  },
+  {
+    id: 'hemangioma-model',
+    kind: 'ONLINE',
+    title: 'Mathematical Model for Determining Hemangioma Thickness',
+    subtitle: 'Fedosov, Goldstein & Diomidov · 2014',
+    text: 'Conference proceedings: Physics. Technologies. Innovations (FTI-2014), pp. 97–98. Ural Federal University.',
+    preview: '/demo/previews/publication-record.svg',
+    source: 'https://scholar.google.com/citations?user=KNHlJ94AAAAJ',
     external: true,
   },
 ];
@@ -143,11 +163,11 @@ function PreviewModal({ document, onClose, t }) {
           </div>
           <div className="preview-actions">
             {!document.external && (
-              <Button small rounded onClick={() => downloadFile(document)}>
+              <Button small rounded inline className="preview-download" onClick={() => downloadFile(document)}>
                 {document.kind === 'PDF' ? t('download_pdf') : t('download_image')}
               </Button>
             )}
-            <Button small rounded onClick={onClose} aria-label={t('close_preview')}>
+            <Button small rounded inline onClick={onClose} aria-label={t('close_preview')}>
               {t('close')}
             </Button>
           </div>
@@ -175,7 +195,8 @@ function downloadFile(document) {
 
 function DocumentListItem({ document, onPreview, onCopy, t }) {
   const title = document.titleKey ? t(document.titleKey) : document.title;
-  const text = document.textKey ? t(document.textKey) : t('certificate_file');
+  const subtitle = document.subtitleKey ? t(document.subtitleKey) : document.subtitle;
+  const text = document.textKey ? t(document.textKey) : document.text || t('certificate_file');
   const copyUrl = document.verificationUrl || new URL(document.source, window.location.origin).href;
   const copyUrlLabel = copyUrl.length > 58 ? `${copyUrl.slice(0, 56)}..` : copyUrl;
 
@@ -194,7 +215,7 @@ function DocumentListItem({ document, onPreview, onCopy, t }) {
       chevronMaterial={false}
       className="document-list-item cursor-pointer"
       title={title}
-      subtitle={document.subtitle}
+      subtitle={subtitle}
       text={text}
       footer={
         <span
@@ -324,7 +345,7 @@ function AppContent() {
         <header className="hero">
           <Glass className="hero-glass rounded-3xl p-6 sm:p-9">
             <p className="eyebrow">{section === 'cert' ? t('certificates_eyebrow') : t('patent_eyebrow')}</p>
-            <h1>{pageTitle}</h1>
+            <h1>{section === 'cert' && <sup className="certificate-count">{documents.length}</sup>}{pageTitle}</h1>
             <p className="hero-description">{section === 'cert' ? t('certificates_description') : t('patent_description')}</p>
             <Button clear rounded className="copy-link" onClick={copyToClipboard}>
               <CopyIcon />
