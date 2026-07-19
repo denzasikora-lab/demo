@@ -361,7 +361,7 @@ function AppContent() {
                 {t('nav_patent')}
               </SegmentedButton>
               <SegmentedButton active={section === 'cert'} onClick={() => navigate('cert')}>
-                <sup className="segment-count">{certificates.length}</sup>{' '}{t('nav_certificates')}
+                {t('nav_certificates')}{' '}<sup className="segment-count">{certificates.length}</sup>
               </SegmentedButton>
             </Segmented>
           </Glass>
@@ -369,7 +369,7 @@ function AppContent() {
 
         <BlockTitle className="documents-title">{t('materials')}</BlockTitle>
         <Block className="documents-block">
-          <Glass className="documents-glass rounded-3xl p-2">
+          <Glass className="documents-glass rounded-3xl">
             <List strong inset dividers className="documents-list">
               {documents.map((document) => (
                 <DocumentListItem key={document.id} document={document} onPreview={setSelectedDocument} onCopy={copyToClipboard} t={t} />

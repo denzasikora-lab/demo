@@ -31,7 +31,7 @@ button { font: inherit; }
 .hero-glass { overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.58); box-shadow: 0 18px 50px rgba(21, 74, 53, 0.1); }
 .eyebrow { margin: 0 0 0.65rem; color: #137458; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
 .hero h1 { max-width: 740px; margin: 0; color: #132b20; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.05rem, 6vw, 3.65rem); font-weight: 500; line-height: 1.02; letter-spacing: -0.045em; }
-.segment-count { color: #137458; font-size: 0.68em; font-weight: 800; line-height: 0; vertical-align: super; }
+.segment-count { display: inline-block; margin-left: 0.2em; color: #137458; font-size: 0.68em; font-weight: 800; line-height: 0; vertical-align: super; }
 .hero-description { max-width: 650px; margin: 1.1rem 0 0; color: #536b5f; font-size: 1.03rem; line-height: 1.55; }
 .copy-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 1.2rem; color: #126d53 !important; font-size: 0.86rem; font-weight: 700; }
 .copy-icon { width: 1rem; height: 1rem; }
@@ -40,8 +40,8 @@ button { font: inherit; }
 .segment-block { padding: 0.5rem 1.25rem 0.2rem; }
 .documents-title { padding: 0 1.25rem; color: #244b3a; }
 .documents-block { padding: 0 1rem; }
-.documents-glass { border: 1px solid rgba(255, 255, 255, 0.65); box-shadow: 0 20px 45px rgba(25, 67, 48, 0.1); }
-.documents-list { overflow: hidden; box-shadow: 0 14px 32px rgba(25, 67, 48, 0.07); }
+.documents-glass { padding: 0; border: 1px solid rgba(255, 255, 255, 0.65); box-shadow: 0 20px 45px rgba(25, 67, 48, 0.1); }
+.documents-list { margin-top: 0 !important; margin-bottom: 0 !important; overflow: hidden; box-shadow: 0 14px 32px rgba(25, 67, 48, 0.07); }
 .document-list-item { transition: background-color 0.18s ease, transform 0.18s ease; }
 .document-list-item:active { background: rgba(25, 110, 82, 0.06); }
 
