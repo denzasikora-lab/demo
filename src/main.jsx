@@ -52,7 +52,7 @@ const patentDocuments = [
     id: 'original-pdf',
     kind: 'PDF',
     titleKey: 'patent_original_title',
-    subtitle: '2620986 C1 · 30.05.2017',
+    subtitle: '2620986 C1',
     textKey: 'patent_original_text',
     preview: '/demo/previews/patent-ru-1.png',
     source: '/demo/patents/Patent_2620986C1_ru.pdf',
@@ -71,9 +71,9 @@ const patentDocuments = [
   {
     id: 'hemangiomas-chapter',
     kind: 'ONLINE',
-    title: 'Method and Model for Estimating the Thickness of Hemangiomas',
-    subtitle: 'Fedosov, Goldstein & Diomidov · 2015',
-    text: 'Chapter in conference proceedings: Physics. Technologies. Innovations, Vol. 1, pp. 196–204. Ural Federal University.',
+    titleKey: 'hemangiomas_chapter_title',
+    subtitleKey: 'publication_authors',
+    textKey: 'hemangiomas_chapter_text',
     preview: '/demo/previews/publication-record.svg',
     source: 'https://sciencedata.urfu.ru/portal/en/persons/--(ffbec4cd-b593-4af0-a10c-5965d72e1627).html',
     external: true,
@@ -81,9 +81,9 @@ const patentDocuments = [
   {
     id: 'hemangioma-model',
     kind: 'ONLINE',
-    title: 'Mathematical Model for Determining Hemangioma Thickness',
-    subtitle: 'Fedosov, Goldstein & Diomidov · 2014',
-    text: 'Conference proceedings: Physics. Technologies. Innovations (FTI-2014), pp. 97–98. Ural Federal University.',
+    titleKey: 'hemangioma_model_title',
+    subtitleKey: 'publication_authors',
+    textKey: 'hemangioma_model_text',
     preview: '/demo/previews/publication-record.svg',
     source: 'https://scholar.google.com/citations?user=KNHlJ94AAAAJ',
     external: true,
@@ -345,7 +345,7 @@ function AppContent() {
         <header className="hero">
           <Glass className="hero-glass rounded-3xl p-6 sm:p-9">
             <p className="eyebrow">{section === 'cert' ? t('certificates_eyebrow') : t('patent_eyebrow')}</p>
-            <h1>{section === 'cert' && <sup className="certificate-count">{documents.length}</sup>}{pageTitle}</h1>
+            <h1>{pageTitle}</h1>
             <p className="hero-description">{section === 'cert' ? t('certificates_description') : t('patent_description')}</p>
             <Button clear rounded className="copy-link" onClick={copyToClipboard}>
               <CopyIcon />
@@ -361,7 +361,7 @@ function AppContent() {
                 {t('nav_patent')}
               </SegmentedButton>
               <SegmentedButton active={section === 'cert'} onClick={() => navigate('cert')}>
-                {t('nav_certificates')}
+                <sup className="segment-count">{certificates.length}</sup>{' '}{t('nav_certificates')}
               </SegmentedButton>
             </Segmented>
           </Glass>

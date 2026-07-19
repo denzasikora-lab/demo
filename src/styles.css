@@ -31,7 +31,7 @@ button { font: inherit; }
 .hero-glass { overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.58); box-shadow: 0 18px 50px rgba(21, 74, 53, 0.1); }
 .eyebrow { margin: 0 0 0.65rem; color: #137458; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
 .hero h1 { max-width: 740px; margin: 0; color: #132b20; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.05rem, 6vw, 3.65rem); font-weight: 500; line-height: 1.02; letter-spacing: -0.045em; }
-.certificate-count { display: inline-block; margin-right: 0.18em; color: #137458; font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: 0.36em; font-weight: 800; letter-spacing: 0; vertical-align: top; }
+.segment-count { color: #137458; font-size: 0.68em; font-weight: 800; line-height: 0; vertical-align: super; }
 .hero-description { max-width: 650px; margin: 1.1rem 0 0; color: #536b5f; font-size: 1.03rem; line-height: 1.55; }
 .copy-link { display: inline-flex; align-items: center; gap: 0.45rem; margin-top: 1.2rem; color: #126d53 !important; font-size: 0.86rem; font-weight: 700; }
 .copy-icon { width: 1rem; height: 1rem; }
