@@ -108,6 +108,7 @@ const certificates = [
   ['ibm-frameworks', 'PDF', 'Agentic AI: LangGraph, CrewAI, AutoGen and BeeAI', 'IBM · Course certificate', 'IBM_Agentic_AI_LangGraph_CrewAI_AutoGen_BeeAI.pdf', 'https://coursera.org/share/b00cef55f4093bd0db44827bbccd9154', 'agentic_certificate_text'],
   ['ibm-fundamentals', 'PDF', 'Fundamentals of Building AI Agents', 'IBM · Course certificate', 'IBM_Fundamentals_Building_AI_Agents.pdf', 'https://coursera.org/share/8a40f683363d3e1338bafc035777c23d', 'agentic_certificate_text'],
   ['openai-agents', 'PDF', 'Agents and Workflows', 'OpenAI Academy', 'OpenAI_Agents_And_Workflows.pdf', 'https://academy.openai.com/public/certificate/kyebwfhzky'],
+  ['microsoft-applied-skills', 'PNG', 'Microsoft Applied Skills: Get started developing agents in Microsoft Foundry', 'Microsoft', 'Egor_Fedosov_Microsoft_Applied_Skills.png', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/22CB998D4353459E?sharingId=584ADB22FB6E15C6'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
@@ -122,6 +123,8 @@ const certificates = [
       ? `/demo/previews/certifications/${filename.replace(/\.pdf$/, '.png')}`
       : id === 'google-ai'
         ? '/demo/previews/certifications/Google_ai.jpg'
+        : id === 'microsoft-applied-skills'
+          ? `/demo/certifications/${filename}`
         : '/demo/previews/certifications/KET.jpg',
 }));
 
