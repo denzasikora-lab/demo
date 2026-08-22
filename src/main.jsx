@@ -110,6 +110,7 @@ const certificates = [
   ['openai-agents', 'PDF', 'Agents and Workflows', 'OpenAI Academy', 'OpenAI_Agents_And_Workflows.pdf', 'https://academy.openai.com/public/certificate/kyebwfhzky'],
   ['microsoft-applied-skills', 'PNG', 'Microsoft Applied Skills: Get started developing agents in Microsoft Foundry', 'Microsoft', 'Egor_Fedosov_Microsoft_Applied_Skills.png', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/22CB998D4353459E?sharingId=584ADB22FB6E15C6'],
   ['cisco-data-analytics', 'PDF', 'Data Analytics Essentials', 'Cisco Networking Academy', 'Cisco_Data_Analytics_Essentials.pdf', 'https://www.credly.com/badges/0cb1351a-ff6a-4017-9ba2-d2458f88d64b'],
+  ['hugging-face-agents-fundamentals', 'WEBP', 'Fundamentals of Agents', 'Hugging Face Agents Course', 'Hugging_Face_Agents_Fundamentals.webp'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
@@ -126,6 +127,8 @@ const certificates = [
         ? '/demo/previews/certifications/Google_ai.jpg'
         : id === 'microsoft-applied-skills'
           ? `/demo/certifications/${filename}`
+          : id === 'hugging-face-agents-fundamentals'
+            ? `/demo/certifications/${filename}`
         : '/demo/previews/certifications/KET.jpg',
 }));
 
