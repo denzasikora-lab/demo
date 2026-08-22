@@ -376,7 +376,7 @@ function AppContent() {
 
         <BlockTitle className="documents-title">{t('materials')}</BlockTitle>
         <Block className="documents-block">
-          <Glass className="documents-glass rounded-3xl">
+          <Glass highlight={false} className="documents-glass rounded-3xl">
             <List strong inset dividers className="documents-list">
               {documents.map((document) => (
                 <DocumentListItem key={document.id} document={document} onPreview={setSelectedDocument} onCopy={copyToClipboard} t={t} />
