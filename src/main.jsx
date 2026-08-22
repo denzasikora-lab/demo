@@ -200,6 +200,10 @@ function downloadFile(document) {
   anchor.remove();
 }
 
+const GlassListItem = React.forwardRef(function GlassListItem(props, ref) {
+  return <Glass component="li" ref={ref} {...props} />;
+});
+
 function DocumentListItem({ document, onPreview, onCopy, t }) {
   const title = document.titleKey ? t(document.titleKey) : document.title;
   const subtitle = document.subtitleKey ? t(document.subtitleKey) : document.subtitle;
@@ -217,6 +221,7 @@ function DocumentListItem({ document, onPreview, onCopy, t }) {
 
   return (
     <ListItem
+      component={GlassListItem}
       link
       dividers
       chevronMaterial={false}
