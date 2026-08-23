@@ -111,6 +111,7 @@ const certificates = [
   ['microsoft-applied-skills', 'PNG', 'Microsoft Applied Skills: Get started developing agents in Microsoft Foundry', 'Microsoft', 'Egor_Fedosov_Microsoft_Applied_Skills.png', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/22CB998D4353459E?sharingId=584ADB22FB6E15C6'],
   ['cisco-data-analytics', 'PDF', 'Data Analytics Essentials', 'Cisco Networking Academy', 'Cisco_Data_Analytics_Essentials.pdf', 'https://www.credly.com/badges/0cb1351a-ff6a-4017-9ba2-d2458f88d64b'],
   ['hugging-face-agents-fundamentals', 'WEBP', 'Fundamentals of Agents', 'Hugging Face Agents Course', 'Hugging_Face_Agents_Fundamentals.webp'],
+  ['google-ai-professional-certificate', 'PDF', 'Google AI', 'Google · Professional Certificate', 'Google_AI_Professional_Certificate_8J3QJL2MS4TW.pdf', 'https://coursera.org/verify/professional-cert/8J3QJL2MS4TW'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
