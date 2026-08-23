@@ -102,7 +102,8 @@ const certificates = [
   ['supervised-learning', 'PDF', 'Supervised Machine Learning', 'Stanford Online · Course certificate', 'Coursera_Stanford_Supervised_Machine_Learning.pdf', 'https://coursera.org/share/0d369ad646eff02cbcc59c3469bd0060', 'ml_certificate_text'],
   ['databricks', 'PDF', 'Databricks', 'Databricks Academy', 'Databricks_Generic_2206_3_1612960_1781711679.pdf', 'https://drive.google.com/file/d/1SDWbVwS-k0hSsUBzk3mZDEt-YUcOODa/view?usp=share_link'],
   ['digital-competences', 'PDF', 'Digital Competences Report', 'Professional development', 'Digital_competences_report.pdf'],
-  ['google-ai', 'PNG', 'Introduction to AI', 'Google · Coursera', 'Google_ai.png', 'https://coursera.org/verify/specialization/Q3T18GZDQQPY'],
+  ['google-ai-essentials', 'PDF', 'Google AI Essentials', 'Google · Specialization', 'Google_AI_Essentials_MHM3ND10EY62.pdf', 'https://coursera.org/verify/specialization/MHM3ND10EY62'],
+  ['google-ai-professional-certificate', 'PDF', 'Google AI', 'Google · Professional Certificate', 'Google_AI_Professional_Certificate_8J3QJL2MS4TW.pdf', 'https://coursera.org/verify/professional-cert/8J3QJL2MS4TW'],
   ['ibm-workflows', 'PDF', 'Agentic AI and Agentic Workflows', 'IBM · Course', 'IBM_Agentic_AI_And_Agentic_Workflows_COURSE.pdf', 'https://coursera.org/verify/specialization/I0DR1TLA8G9M', 'agentic_course_text'],
   ['ibm-langchain', 'PDF', 'Agentic AI: LangChain and LangGraph', 'IBM · Course certificate', 'IBM_Agentic_AI_LangChain_LangGraph.pdf', 'https://coursera.org/share/289f0e4826d000f8c7ce42c5a40b990f', 'agentic_certificate_text'],
   ['ibm-frameworks', 'PDF', 'Agentic AI: LangGraph, CrewAI, AutoGen and BeeAI', 'IBM · Course certificate', 'IBM_Agentic_AI_LangGraph_CrewAI_AutoGen_BeeAI.pdf', 'https://coursera.org/share/b00cef55f4093bd0db44827bbccd9154', 'agentic_certificate_text'],
@@ -111,7 +112,6 @@ const certificates = [
   ['microsoft-applied-skills', 'PNG', 'Microsoft Applied Skills: Get started developing agents in Microsoft Foundry', 'Microsoft', 'Egor_Fedosov_Microsoft_Applied_Skills.png', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/22CB998D4353459E?sharingId=584ADB22FB6E15C6'],
   ['cisco-data-analytics', 'PDF', 'Data Analytics Essentials', 'Cisco Networking Academy', 'Cisco_Data_Analytics_Essentials.pdf', 'https://www.credly.com/badges/0cb1351a-ff6a-4017-9ba2-d2458f88d64b'],
   ['hugging-face-agents-fundamentals', 'WEBP', 'Fundamentals of Agents', 'Hugging Face Agents Course', 'Hugging_Face_Agents_Fundamentals.webp'],
-  ['google-ai-professional-certificate', 'PDF', 'Google AI', 'Google · Professional Certificate', 'Google_AI_Professional_Certificate_8J3QJL2MS4TW.pdf', 'https://coursera.org/verify/professional-cert/8J3QJL2MS4TW'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
@@ -124,8 +124,6 @@ const certificates = [
   preview:
     kind === 'PDF'
       ? `/demo/previews/certifications/${filename.replace(/\.pdf$/, '.png')}`
-      : id === 'google-ai'
-        ? '/demo/previews/certifications/Google_ai.jpg'
         : id === 'microsoft-applied-skills'
           ? `/demo/certifications/${filename}`
           : id === 'hugging-face-agents-fundamentals'
