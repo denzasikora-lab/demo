@@ -112,6 +112,10 @@ const certificates = [
   ['microsoft-applied-skills', 'PNG', 'Microsoft Applied Skills: Get started developing agents in Microsoft Foundry', 'Microsoft', 'Egor_Fedosov_Microsoft_Applied_Skills.png', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/22CB998D4353459E?sharingId=584ADB22FB6E15C6'],
   ['cisco-data-analytics', 'PDF', 'Data Analytics Essentials', 'Cisco Networking Academy', 'Cisco_Data_Analytics_Essentials.pdf', 'https://www.credly.com/badges/0cb1351a-ff6a-4017-9ba2-d2458f88d64b'],
   ['hugging-face-agents-fundamentals', 'WEBP', 'Fundamentals of Agents', 'Hugging Face Agents Course', 'Hugging_Face_Agents_Fundamentals.webp'],
+  ['digital-health-eit', 'PDF', 'Digital Health', 'EIT Health · 10 hours', 'Digital_Health_EIT.pdf'],
+  ['cs50-ai', 'PDF', "CS50's Introduction to Artificial Intelligence with Python", 'Harvard University · CS50', 'CS50_Introduction_to_AI_with_Python.pdf', 'https://certificates.cs50.io/f8502d39-e49e-40ef-a6c1-36f1e77c7647.pdf?size=letter'],
+  ['ai-applications-healthcare', 'PDF', 'AI Applications in Healthcare', 'Simplilearn SkillUp', 'AI_Applications_in_Healthcare_Simplilearn.pdf'],
+  ['bioinformatics-linux', 'PDF', 'Bioinformatics for Biologists: Linux, Bash Scripting, and R', 'Wellcome Connecting Science · FutureLearn', 'Bioinformatics_for_Biologists_Linux_Bash_R.pdf', 'https://www.futurelearn.com/certificates/kc3mzp4'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
