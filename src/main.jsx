@@ -92,6 +92,7 @@ const patentDocuments = [
 
 const certificates = [
   ['aws', 'PDF', 'AWS Cloud Essentials', 'AWS', 'AWS_Essentials.pdf'],
+  ['azure-management-tasks', 'PDF', 'Azure: Get Started with Management Tasks', 'Microsoft Applied Skills', 'Azure_Management_Tasks_Microsoft_Applied_Skills.pdf', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/E2750B10083A5DDC?sharingId=584ADB22FB6E15C6'],
   ['langchain', 'PDF', 'Build AI Autonomous Agents', 'LangChain & Hugging Face', 'Certificate_Build_AI_Autonomous_Agents_with_LangChain_and_Hugging Face.pdf'],
   ['claude-101', 'PDF', 'Claude 101', 'Anthropic Academy', 'Clouade_101.pdf', 'https://verify.skilljar.com/c/578echzjdw5b'],
   ['claude-fluency', 'PDF', 'Claude AI Fluency', 'Anthropic Academy', 'Clouade_AI_Fluency.pdf', 'https://verify.skilljar.com/c/42a2c8rad7ah'],
