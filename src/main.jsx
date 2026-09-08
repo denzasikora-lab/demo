@@ -117,6 +117,7 @@ const certificates = [
   ['cs50-ai', 'PDF', "CS50's Introduction to Artificial Intelligence with Python", 'Harvard University · CS50', 'CS50_Introduction_to_AI_with_Python.pdf', 'https://certificates.cs50.io/f8502d39-e49e-40ef-a6c1-36f1e77c7647.pdf?size=letter'],
   ['ai-applications-healthcare', 'PDF', 'AI Applications in Healthcare', 'Simplilearn SkillUp', 'AI_Applications_in_Healthcare_Simplilearn.pdf'],
   ['bioinformatics-linux', 'PDF', 'Bioinformatics for Biologists: Linux, Bash Scripting, and R', 'Wellcome Connecting Science · FutureLearn', 'Bioinformatics_for_Biologists_Linux_Bash_R.pdf', 'https://www.futurelearn.com/certificates/kc3mzp4'],
+  ['langgraph-deep-research', 'PDF', 'Project: Deep Research with LangGraph', 'LangChain Academy', 'Project_Deep_Research_with_LangGraph.pdf', 'https://academy.langchain.com/certificates/xlrwznbcys'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
