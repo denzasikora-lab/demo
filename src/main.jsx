@@ -118,6 +118,7 @@ const certificates = [
   ['ai-applications-healthcare', 'PDF', 'AI Applications in Healthcare', 'Simplilearn SkillUp', 'AI_Applications_in_Healthcare_Simplilearn.pdf'],
   ['bioinformatics-linux', 'PDF', 'Bioinformatics for Biologists: Linux, Bash Scripting, and R', 'Wellcome Connecting Science · FutureLearn', 'Bioinformatics_for_Biologists_Linux_Bash_R.pdf', 'https://www.futurelearn.com/certificates/kc3mzp4'],
   ['langgraph-deep-research', 'PDF', 'Project: Deep Research with LangGraph', 'LangChain Academy', 'Project_Deep_Research_with_LangGraph.pdf', 'https://academy.langchain.com/certificates/xlrwznbcys'],
+  ['data-science-analytics', 'PDF', 'Data Science & Analytics', 'HP LIFE · HP Foundation', 'Data_Science_and_Analytics_HP_LIFE.pdf', 'https://www.life-global.org/certificate/96112f00-b143-496b-935b-e3460b4dd70f'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
