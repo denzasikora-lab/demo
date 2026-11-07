@@ -110,7 +110,7 @@ const certificates = [
   ['ibm-frameworks', 'PDF', 'Agentic AI: LangGraph, CrewAI, AutoGen and BeeAI', 'IBM · Course certificate', 'IBM_Agentic_AI_LangGraph_CrewAI_AutoGen_BeeAI.pdf', 'https://coursera.org/share/b00cef55f4093bd0db44827bbccd9154', 'agentic_certificate_text'],
   ['ibm-fundamentals', 'PDF', 'Fundamentals of Building AI Agents', 'IBM · Course certificate', 'IBM_Fundamentals_Building_AI_Agents.pdf', 'https://coursera.org/share/8a40f683363d3e1338bafc035777c23d', 'agentic_certificate_text'],
   ['openai-agents', 'PDF', 'Agents and Workflows', 'OpenAI Academy', 'OpenAI_Agents_And_Workflows.pdf', 'https://academy.openai.com/public/certificate/kyebwfhzky'],
-  ['nasa-open-science', 'PDF', 'Open Science Essentials', 'NASA · Certificate of Achievement', 'NASA_Open_Science_Essentials.pdf'],
+  ['nasa-open-science', 'PDF', 'Open Science Essentials', 'NASA · Certificate of Achievement', 'NASA_Open_Science_Essentials.pdf', 'https://www.credly.com/badges/c3403690-6cfa-4467-ad9f-1f94d0635afd/public_url'],
   ['microsoft-applied-skills', 'PNG', 'Microsoft Applied Skills: Get started developing agents in Microsoft Foundry', 'Microsoft', 'Egor_Fedosov_Microsoft_Applied_Skills.png', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/22CB998D4353459E?sharingId=584ADB22FB6E15C6'],
   ['cisco-data-analytics', 'PDF', 'Data Analytics Essentials', 'Cisco Networking Academy', 'Cisco_Data_Analytics_Essentials.pdf', 'https://www.credly.com/badges/0cb1351a-ff6a-4017-9ba2-d2458f88d64b'],
   ['hugging-face-agents-fundamentals', 'WEBP', 'Fundamentals of Agents', 'Hugging Face Agents Course', 'Hugging_Face_Agents_Fundamentals.webp'],
@@ -216,7 +216,8 @@ function DocumentListItem({ document, onPreview, onCopy, t }) {
   const subtitle = document.subtitleKey ? t(document.subtitleKey) : document.subtitle;
   const text = document.textKey ? t(document.textKey) : document.text || t('certificate_file');
   const copyUrl = document.verificationUrl || new URL(document.source, window.location.origin).href;
-  const copyUrlLabel = copyUrl.length > 58 ? `${copyUrl.slice(0, 56)}..` : copyUrl;
+  const showFullUrl = document.id === 'nasa-open-science';
+  const copyUrlLabel = showFullUrl || copyUrl.length <= 58 ? copyUrl : `${copyUrl.slice(0, 56)}..`;
 
   const open = () => {
     if (document.external) {
@@ -240,7 +241,7 @@ function DocumentListItem({ document, onPreview, onCopy, t }) {
         <span
           role="button"
           tabIndex={0}
-          className="document-source"
+          className={`document-source${showFullUrl ? ' document-source-full' : ''}`}
           title={copyUrl}
           onClick={(event) => {
             event.stopPropagation();
