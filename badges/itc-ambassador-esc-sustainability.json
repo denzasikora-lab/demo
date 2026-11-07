@@ -1,0 +1,17 @@
+{
+  "@context": "https://w3id.org/openbadges/v2",
+  "id": "https://denzasikora-lab.github.io/demo/badges/itc-ambassador-esc-sustainability.json",
+  "type": "BadgeClass",
+  "name": "Ambassador of ESC sustainability",
+  "description": "Recognition for Ambassador of ESC sustainability.",
+  "image": "https://denzasikora-lab.github.io/demo/badges/itc-ambassador-esc-sustainability.png",
+  "criteria": {
+    "narrative": "This badge recognizes the Ambassador of ESC sustainability."
+  },
+  "issuer": {
+    "id": "https://www.itcilo.org/",
+    "type": "Profile",
+    "name": "International Training Centre of the ILO",
+    "url": "https://www.itcilo.org/"
+  }
+}
