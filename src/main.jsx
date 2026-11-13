@@ -91,7 +91,6 @@ const patentDocuments = [
 ];
 
 const certificates = [
-  ['aacl-ijcnlp-2026', 'PDF', 'AACL-IJCNLP 2026 - Certificate of Attendance', 'Association for Computational Linguistics - November 6-10, 2026', 'AACL_IJCNLP_2026_Certificate_Egor_Fedosov.pdf', 'https://openreview.net/forum?id=UTcSavn1Uo', 'publication_link'],
   ['aws', 'PDF', 'AWS Cloud Essentials', 'AWS', 'AWS_Essentials.pdf'],
   ['azure-management-tasks', 'PDF', 'Azure: Get Started with Management Tasks', 'Microsoft Applied Skills', 'Azure_Management_Tasks_Microsoft_Applied_Skills.pdf', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/E2750B10083A5DDC?sharingId=584ADB22FB6E15C6'],
   ['langchain', 'PDF', 'Build AI Autonomous Agents', 'LangChain & Hugging Face', 'Certificate_Build_AI_Autonomous_Agents_with_LangChain_and_Hugging Face.pdf'],
@@ -122,6 +121,7 @@ const certificates = [
   ['bioinformatics-linux', 'PDF', 'Bioinformatics for Biologists: Linux, Bash Scripting, and R', 'Wellcome Connecting Science · FutureLearn', 'Bioinformatics_for_Biologists_Linux_Bash_R.pdf', 'https://www.futurelearn.com/certificates/kc3mzp4'],
   ['langgraph-deep-research', 'PDF', 'Project: Deep Research with LangGraph', 'LangChain Academy', 'Project_Deep_Research_with_LangGraph.pdf', 'https://academy.langchain.com/certificates/xlrwznbcys'],
   ['data-science-analytics', 'PDF', 'Data Science & Analytics', 'HP LIFE · HP Foundation', 'Data_Science_and_Analytics_HP_LIFE.pdf', 'https://www.life-global.org/certificate/96112f00-b143-496b-935b-e3460b4dd70f'],
+  ['aacl-ijcnlp-2026', 'PDF', 'AACL-IJCNLP 2026 - Certificate of Attendance', 'Association for Computational Linguistics - November 6-10, 2026', 'AACL_IJCNLP_2026_Certificate_Egor_Fedosov.pdf', 'https://openreview.net/forum?id=UTcSavn1Uo', 'publication_link'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
