@@ -91,6 +91,7 @@ const patentDocuments = [
 ];
 
 const certificates = [
+  ['aacl-ijcnlp-2026', 'PDF', 'AACL-IJCNLP 2026 - Certificate of Attendance', 'Association for Computational Linguistics - November 6-10, 2026', 'AACL_IJCNLP_2026_Certificate_Egor_Fedosov.pdf'],
   ['aws', 'PDF', 'AWS Cloud Essentials', 'AWS', 'AWS_Essentials.pdf'],
   ['azure-management-tasks', 'PDF', 'Azure: Get Started with Management Tasks', 'Microsoft Applied Skills', 'Azure_Management_Tasks_Microsoft_Applied_Skills.pdf', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/E2750B10083A5DDC?sharingId=584ADB22FB6E15C6'],
   ['langchain', 'PDF', 'Build AI Autonomous Agents', 'LangChain & Hugging Face', 'Certificate_Build_AI_Autonomous_Agents_with_LangChain_and_Hugging Face.pdf'],
