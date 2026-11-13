@@ -91,7 +91,7 @@ const patentDocuments = [
 ];
 
 const certificates = [
-  ['aacl-ijcnlp-2026', 'PDF', 'AACL-IJCNLP 2026 - Certificate of Attendance', 'Association for Computational Linguistics - November 6-10, 2026', 'AACL_IJCNLP_2026_Certificate_Egor_Fedosov.pdf'],
+  ['aacl-ijcnlp-2026', 'PDF', 'AACL-IJCNLP 2026 - Certificate of Attendance', 'Association for Computational Linguistics - November 6-10, 2026', 'AACL_IJCNLP_2026_Certificate_Egor_Fedosov.pdf', 'https://openreview.net/forum?id=UTcSavn1Uo', 'publication_link'],
   ['aws', 'PDF', 'AWS Cloud Essentials', 'AWS', 'AWS_Essentials.pdf'],
   ['azure-management-tasks', 'PDF', 'Azure: Get Started with Management Tasks', 'Microsoft Applied Skills', 'Azure_Management_Tasks_Microsoft_Applied_Skills.pdf', 'https://learn.microsoft.com/api/credentials/share/en-gb/egor-fedosov/E2750B10083A5DDC?sharingId=584ADB22FB6E15C6'],
   ['langchain', 'PDF', 'Build AI Autonomous Agents', 'LangChain & Hugging Face', 'Certificate_Build_AI_Autonomous_Agents_with_LangChain_and_Hugging Face.pdf'],
@@ -218,6 +218,10 @@ function DocumentListItem({ document, onPreview, onCopy, t }) {
   const subtitle = document.subtitleKey ? t(document.subtitleKey) : document.subtitle;
   const text = document.textKey ? t(document.textKey) : document.text || t('certificate_file');
   const copyUrl = document.verificationUrl || new URL(document.source, window.location.origin).href;
+  const isPublicationLink = document.textKey === 'publication_link';
+  const activateSource = () => isPublicationLink
+    ? window.open(copyUrl, '_blank', 'noopener,noreferrer')
+    : onCopy(copyUrl);
   const showFullUrl = document.id.startsWith('nasa-open-science');
   const copyUrlLabel = showFullUrl || copyUrl.length <= 58 ? copyUrl : `${copyUrl.slice(0, 56)}..`;
 
@@ -241,20 +245,20 @@ function DocumentListItem({ document, onPreview, onCopy, t }) {
       text={text}
       footer={
         <span
-          role="button"
+          role={isPublicationLink ? 'link' : 'button'}
           tabIndex={0}
           className={`document-source${showFullUrl ? ' document-source-full' : ''}`}
           title={copyUrl}
           onClick={(event) => {
             event.stopPropagation();
             event.preventDefault();
-            onCopy(copyUrl);
+            activateSource();
           }}
           onKeyDown={(event) => {
             if (event.key !== 'Enter' && event.key !== ' ') return;
             event.preventDefault();
             event.stopPropagation();
-            onCopy(copyUrl);
+            activateSource();
           }}
         >
           {copyUrlLabel}

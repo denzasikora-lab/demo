@@ -20,6 +20,7 @@ export const l_ = {
   download_image: { en: 'Download image', ru: 'Скачать изображение', es: 'Descargar imagen', fr: 'Télécharger l’image', zh: '下载图片', ar: 'تنزيل الصورة' },
   open: { en: 'Open', ru: 'Открыть', es: 'Abrir', fr: 'Ouvrir', zh: '打开', ar: 'فتح' },
   certificate_file: { en: 'Certificate file', ru: 'Файл сертификата', es: 'Archivo de certificado', fr: 'Fichier de certificat', zh: '证书文件', ar: 'ملف الشهادة' },
+  publication_link: { en: 'Publication link', ru: 'Ссылка на публикацию', es: 'Enlace a la publicación', fr: 'Lien vers la publication', zh: '论文链接', ar: 'رابط المنشور' },
   ml_course_text: { en: 'Course containing the three certificates listed below.', ru: 'Курс, включающий три перечисленных ниже сертификата.' },
   ml_certificate_text: { en: 'Certificate within the Machine Learning Specialization course.', ru: 'Сертификат в составе курса Machine Learning Specialization.' },
   agentic_course_text: { en: 'Course containing the three certificates listed below.', ru: 'Курс, включающий три перечисленных ниже сертификата.' },
