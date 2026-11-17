@@ -122,6 +122,7 @@ const certificates = [
   ['langgraph-deep-research', 'PDF', 'Project: Deep Research with LangGraph', 'LangChain Academy', 'Project_Deep_Research_with_LangGraph.pdf', 'https://academy.langchain.com/certificates/xlrwznbcys'],
   ['data-science-analytics', 'PDF', 'Data Science & Analytics', 'HP LIFE · HP Foundation', 'Data_Science_and_Analytics_HP_LIFE.pdf', 'https://www.life-global.org/certificate/96112f00-b143-496b-935b-e3460b4dd70f'],
   ['aacl-ijcnlp-2026', 'PDF', 'AACL-IJCNLP 2026 - Certificate of Attendance', 'Association for Computational Linguistics - November 6-10, 2026', 'AACL_IJCNLP_2026_Certificate_Egor_Fedosov.pdf', 'https://openreview.net/forum?id=UTcSavn1Uo', 'publication_link'],
+  ['nasa-space-apps-2026', 'PNG', 'Galactic Problem Solver', 'NASA Space Apps Challenge · 2026', 'NASA_Space_Apps_Challenge_2026_Galactic_Problem_Solver.png'],
 ].map(([id, kind, title, subtitle, filename, verificationUrl, textKey]) => ({
   id,
   kind,
@@ -134,7 +135,7 @@ const certificates = [
   preview:
     kind === 'PDF'
       ? `/demo/previews/certifications/${filename.replace(/\.pdf$/, '.png')}`
-        : id === 'microsoft-applied-skills'
+        : id === 'microsoft-applied-skills' || id === 'nasa-space-apps-2026'
           ? `/demo/certifications/${filename}`
           : id === 'hugging-face-agents-fundamentals'
             ? `/demo/certifications/${filename}`
